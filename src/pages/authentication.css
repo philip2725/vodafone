@@ -1,0 +1,90 @@
+.show-login {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+}
+
+.hide-login {
+  display: none;
+}
+
+.login-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-close-btn {
+  align-self: flex-end;
+  margin: 40px 40px 0px 0px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Style the tab */
+.tab {
+  box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab-item {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 20px 100px;
+}
+
+.tab-item-active {
+  border-bottom: 2px solid #d32d1f;
+}
+
+.login-section {
+  width: 80%;
+  max-width: 500px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.form-input {
+  background-color: #e9f0fd;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #93979f;
+  align-self: stretch;
+}
+
+.form input[type="submit"] {
+  margin: 20px 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #8c3297;
+}
+
+.button-underline {
+  border: none;
+  margin-bottom: 8px;
+  padding: 0px;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: flex-start;
+}
