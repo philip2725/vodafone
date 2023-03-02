@@ -6,11 +6,16 @@ import closeIcon from "../assets/close.png";
 import { validateLoginInput, validateRegisterInput } from "../helpers/validate";
 import { TextInput } from "../components/Form";
 
+import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "../redux/userSlice";
+
 function Authentication(props) {
   const [hasAccount, setHasAccount] = useState(true);
   const [loginData, setLoginData] = useState({});
   const [registerData, setRegisterData] = useState({});
   const [inputState, setInputState] = useState({});
+
+  const dispatch = useDispatch();
 
   function handleInputChange(event) {
     const name = event.target.name;
@@ -39,8 +44,13 @@ function Authentication(props) {
       return;
     }
 
-    //login action
+    //login user and get user data from backend
     console.log("I am on a good way to be logged in ");
+    //normally set user with userdata from backend
+    //if login would fail we need to return and show error to user
+    //so handling error is not coded here
+    dispatch(setUser({ email: loginData.email }));
+    props.handleLoginVisibility();
   }
 
   function handleSignUp(event) {
@@ -53,6 +63,17 @@ function Authentication(props) {
     }
 
     console.log("I am on a good way to be registered");
+    //create user in backend
+    //if create user would fail we need to return and show error to user
+    //so handling error is not coded here
+    dispatch(
+      setUser({
+        email: registerData.email,
+        firstname: registerData.firstname,
+        lastname: registerData.lastname,
+      })
+    );
+    props.handleLoginVisibility();
   }
 
   return (
