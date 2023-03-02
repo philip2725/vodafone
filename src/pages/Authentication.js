@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-import "./authentication.css";
+import "./Authentication.css";
 import closeIcon from "../assets/close.png";
+
+import { isEmail } from "../helpers/validate";
+import { TextInput } from "../components/Form";
 
 function Authentication(props) {
   const [hasAccount, setHasAccount] = useState(false);
   const [loginData, setLoginData] = useState({});
+  const [inputState, setInputState] = useState({});
 
   function handleInputChange(event) {
     const name = event.target.name;
@@ -17,8 +21,37 @@ function Authentication(props) {
     });
   }
 
-  function handleLogin() {
-    console.log("Logged in");
+  function handleLogin(event) {
+    event.preventDefault();
+
+    //inputState data
+    let validInput = validateInput();
+
+    if (!validInput) {
+      return;
+    }
+
+    //login action
+  }
+
+  function validateInput() {
+    const email = loginData.username;
+    const password = loginData.password;
+    let invalid = {};
+
+    if (!isEmail(email)) {
+      invalid["email"] = "Die angegebene E-Mail ist nicht korrekt";
+    }
+
+    if (!email) {
+      invalid["email"] = "Deine E-Mail Adresse fehlt";
+    }
+
+    if (!password) {
+      invalid["password"] = "Dein Password fehlt";
+    }
+    setInputState(invalid);
+    return Object.keys(invalid).length === 0;
   }
 
   return (
@@ -58,23 +91,26 @@ function Authentication(props) {
             MeinVodafone
           </p>
 
-          <form className="form">
-            <label>E-Mail Adresse</label>
-            <input
-              className="form-input"
-              type="email"
+          <form className="form" onSubmit={handleLogin}>
+            <TextInput
+              label="E-Mail Adresse"
               name="username"
+              type="email"
               onChange={handleInputChange}
-            />
-            <label>Passwort</label>
-            <input
-              className="form-input"
-              type="password"
-              name="password"
-              onChange={handleInputChange}
+              invalid={inputState.email}
+              errorMessage={inputState.email}
             />
 
-            <input type="submit" value="Login" onSubmit={handleLogin} />
+            <TextInput
+              label="Passwort"
+              name="password"
+              type="password"
+              onChange={handleInputChange}
+              invalid={inputState.password}
+              errorMessage={inputState.password}
+            />
+
+            <input type="submit" value="Login" />
           </form>
 
           <button className="button-underline">Zugangsdaten vergessen</button>

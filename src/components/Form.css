@@ -1,0 +1,15 @@
+.form-input {
+  background-color: #e9f0fd;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #93979f;
+  align-self: stretch;
+}
+
+.form-input-error {
+  border: 1px solid #d32d1f;
+}
+
+.input-error-msg {
+  color: #d32d1f;
+}

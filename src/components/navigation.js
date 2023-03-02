@@ -1,4 +1,4 @@
-import "./navigation.css";
+import "./Navigation.css";
 
 import logo from "../assets/vodafone-logo-vector.png";
 import user from "../assets/user.png";
