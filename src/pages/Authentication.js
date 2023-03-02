@@ -34,6 +34,10 @@ function Authentication(props) {
     }
   }
 
+  function closeWindow() {
+    props.handleLoginVisibility();
+  }
+
   function handleLogin(event) {
     event.preventDefault();
 
@@ -50,7 +54,7 @@ function Authentication(props) {
     //if login would fail we need to return and show error to user
     //so handling error is not coded here
     dispatch(setUser({ email: loginData.email }));
-    props.handleLoginVisibility();
+    closeWindow();
   }
 
   function handleSignUp(event) {
@@ -73,16 +77,13 @@ function Authentication(props) {
         lastname: registerData.lastname,
       })
     );
-    props.handleLoginVisibility();
+    closeWindow();
   }
 
   return (
     <div className={props.visibility ? "show-login" : "hide-login"}>
       <div className="login-content">
-        <button
-          className="login-close-btn"
-          onClick={props.handleLoginVisibility}
-        >
+        <button className="login-close-btn" onClick={closeWindow}>
           <img src={closeIcon} alt="close button" width={30} />
         </button>
 
