@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import HorizontalMenu from "../components/HorizontalMenu";
+import { getMyRequests } from "../services/tickets";
+
+import "./MyActivities.css";
 
 function MyActivities(props) {
   const [menuIndex, setMenuIndex] = useState(0);
+  const [requests, setRequests] = useState({});
+
+  useEffect(() => {
+    //normally request get to the backend async
+
+    async function prepareData(params) {
+      let data = await getMyRequests();
+      setRequests(data);
+    }
+
+    prepareData();
+  }, []);
 
   return (
     <>
