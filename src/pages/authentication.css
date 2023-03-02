@@ -27,26 +27,9 @@
   cursor: pointer;
 }
 
-/* Style the tab */
-.tab {
+.tab-shadow {
   box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  display: flex;
   justify-content: center;
-  margin-top: 40px;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab-item {
-  background-color: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 20px 100px;
-}
-
-.tab-item-active {
-  border-bottom: 2px solid #d32d1f;
 }
 
 .login-section {

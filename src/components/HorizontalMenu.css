@@ -1,0 +1,19 @@
+/* Style the tab */
+.tab-horizontal {
+  background-color: #ffffff;
+  display: flex;
+  margin-top: 40px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab-h-item {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 20px 100px;
+}
+
+.tab-h-item-active {
+  border-bottom: 2px solid #d32d1f;
+}

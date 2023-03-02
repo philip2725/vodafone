@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./pages/Root";
+import MyActivities from "./pages/MyActivities";
 import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "react-redux";
@@ -12,6 +13,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    children: [
+      {
+        path: "myactivities",
+        element: <MyActivities />,
+      },
+    ],
   },
 ]);
 

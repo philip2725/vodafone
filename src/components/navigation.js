@@ -2,7 +2,7 @@ import "./Navigation.css";
 
 import logo from "../assets/vodafone-logo-vector.png";
 import user from "../assets/user.png";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,13 +13,14 @@ function Navigation(props) {
 
   const currentUser = useSelector((state) => state.user.currentUser);
   const ref = useRef(null);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   function handleSignout() {
     dispatch(setUser({}));
     toggleDropdown();
-    redirect("/");
+    navigate("/");
   }
 
   function toggleDropdown() {

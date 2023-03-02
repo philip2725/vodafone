@@ -5,12 +5,13 @@ import closeIcon from "../assets/close.png";
 
 import { validateLoginInput, validateRegisterInput } from "../helpers/validate";
 import { TextInput } from "../components/Form";
+import HorizontalMenu from "../components/HorizontalMenu";
 
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
 
 function Authentication(props) {
-  const [hasAccount, setHasAccount] = useState(true);
+  const [hasAccount, setHasAccount] = useState(1);
   const [loginData, setLoginData] = useState({});
   const [registerData, setRegisterData] = useState({});
   const [inputState, setInputState] = useState({});
@@ -89,20 +90,15 @@ function Authentication(props) {
 
         <h1>MeinVodafone</h1>
 
-        <div className="tab">
-          <button
-            onClick={() => setHasAccount(true)}
-            className={hasAccount ? "tab-item tab-item-active" : "tab-item"}
-          >
-            Anmelden
-          </button>
-          <button
-            onClick={() => setHasAccount(false)}
-            className={hasAccount ? "tab-item" : "tab-item tab-item-active"}
-          >
-            Registrieren
-          </button>
-        </div>
+        <HorizontalMenu
+          tabs={[
+            { id: 1, name: "Anmelden" },
+            { id: 0, name: "Registrieren" },
+          ]}
+          className="tab-shadow"
+          active={hasAccount}
+          onClick={setHasAccount}
+        />
 
         <h2>
           {hasAccount
@@ -141,10 +137,7 @@ function Authentication(props) {
           </form>
 
           <button className="button-underline">Zugangsdaten vergessen</button>
-          <button
-            className="button-underline"
-            onClick={() => setHasAccount(false)}
-          >
+          <button className="button-underline" onClick={() => setHasAccount(0)}>
             Registrieren
           </button>
         </section>
@@ -202,10 +195,7 @@ function Authentication(props) {
             <input type="submit" value="Registrieren" />
           </form>
 
-          <button
-            className="button-underline"
-            onClick={() => setHasAccount(true)}
-          >
+          <button className="button-underline" onClick={() => setHasAccount(1)}>
             Anmelden
           </button>
         </section>
