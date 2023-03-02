@@ -5,6 +5,9 @@ import "./index.css";
 import Root from "./pages/Root";
 import reportWebVitals from "./reportWebVitals";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +18,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
