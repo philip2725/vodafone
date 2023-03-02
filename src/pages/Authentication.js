@@ -32,7 +32,6 @@ function Authentication(props) {
   function handleLogin(event) {
     event.preventDefault();
 
-    //inputState data
     let { valid, errors } = validateLoginInput(loginData);
     setInputState(errors);
 

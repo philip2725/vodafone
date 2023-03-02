@@ -12,7 +12,7 @@ export function TextInput(props) {
         //invalid
         //name
       }
-      {props.label && <label>{props.label}</label>}
+      {props.label && <label className="form-label">{props.label}</label>}
 
       <input
         className={`form-input ${props.invalid && "form-input-error"} ${

@@ -13,3 +13,7 @@
 .input-error-msg {
   color: #d32d1f;
 }
+
+.form-label {
+  margin-top: 5px;
+}
