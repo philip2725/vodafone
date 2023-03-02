@@ -6,7 +6,7 @@ import closeIcon from "../assets/close.png";
 import { validateLoginInput, validateRegisterInput } from "../helpers/validate";
 import { TextInput } from "../components/Form";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
 
 function Authentication(props) {
