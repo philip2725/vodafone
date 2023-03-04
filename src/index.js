@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./pages/Root";
+import TrackMyOrder from "./pages/TrackMyOrder";
 import MyActivities from "./pages/MyActivities";
 import reportWebVitals from "./reportWebVitals";
 
@@ -15,8 +16,12 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "myactivities",
+        path: "aktivitäten",
         element: <MyActivities />,
+      },
+      {
+        path: "lieferung/:id",
+        element: <TrackMyOrder />,
       },
     ],
   },

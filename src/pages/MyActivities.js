@@ -7,6 +7,7 @@ import HorizontalMenu from "../components/HorizontalMenu";
 
 import CollapsibleTable from "../components/CollapsibleTable";
 import TicketDetail from "../components/TicketDetail";
+import MyOrder from "../components/MyOrder";
 
 function MyActivities(props) {
   //determine the state of the horizontal menu (Meine Anfragen, Meine Bestellungen)
@@ -26,6 +27,41 @@ function MyActivities(props) {
       message: "",
     },
   });
+
+  const myOrders = [
+    {
+      orderDate: "03.03.2023",
+      total: "300,95",
+      adress: {
+        name: "Benjamin Gusek",
+        street: "Scharnhorststraße 3",
+        zip: "51375",
+        city: "Leverkusen",
+      },
+      orderId: "307-42535435345",
+      product: {
+        name: "Apple iPhone 14 Pro 128GB Space Schwarz Dual Sim",
+        price: "300,95",
+        deliveryDate: "04.03.2023",
+      },
+    },
+    {
+      orderDate: "05.03.2023",
+      total: "50,95",
+      adress: {
+        name: "Mareike",
+        street: "Rudolfstraße 1",
+        zip: "50665",
+        city: "Köln",
+      },
+      orderId: "307-45663455",
+      product: {
+        name: "Apple iPhone 14 Pro Protection Case Blau",
+        price: "45,00",
+        deliveryDate: "10.03.2023",
+      },
+    },
+  ];
 
   useEffect(() => {
     //normally request get to the backend async
@@ -68,9 +104,21 @@ function MyActivities(props) {
         onClick={setMenuIndex}
       />
 
-      <CollapsibleTable data={tickets} handler={openDetailPage} />
+      {menuIndex === 0 && (
+        <>
+          <CollapsibleTable data={tickets} handler={openDetailPage} />
 
-      <TicketDetail data={detailPage} handler={setDetailPage} />
+          <TicketDetail data={detailPage} handler={setDetailPage} />
+        </>
+      )}
+
+      {menuIndex === 1 && (
+        <>
+          {myOrders.map((order) => {
+            return <MyOrder data={order} />;
+          })}
+        </>
+      )}
     </>
   );
 }

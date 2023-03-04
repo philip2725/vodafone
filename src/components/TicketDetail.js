@@ -13,7 +13,9 @@ function TicketDetail(props) {
   useEffect(() => {
     const closeTicketDetail = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
-        handler({ ...data, visible: false });
+        handler((prevState) => {
+          return { ...prevState, visible: false };
+        });
       }
     };
     document.addEventListener("click", closeTicketDetail, true);

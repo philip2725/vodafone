@@ -17,6 +17,7 @@ export default function ColorsTimeline(props) {
         let end = `${activity.activityFinish.finishDate} , ${activity.activityFinish.finishTime}`;
         return (
           <TimelineItem
+            key={activity.activityCode}
             className="timeline-item"
             onClick={() =>
               handler((prevState) => {
