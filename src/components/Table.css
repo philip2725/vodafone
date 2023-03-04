@@ -1,0 +1,21 @@
+.manage-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #8c3297;
+}
+
+.status-completed {
+  padding: 10px 10px;
+  background-color: #d1ead1;
+  border-radius: 5px;
+  color: rgb(45, 175, 45);
+}
+
+.status-inProgress {
+  padding: 10px 10px;
+  background-color: rgb(246, 221, 173);
+  border-radius: 5px;
+  color: rgb(227, 157, 18);
+}

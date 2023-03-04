@@ -1,0 +1,50 @@
+.detailPage-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-detailPage {
+  display: flex;
+}
+
+.detailPage-container {
+  width: 500px;
+  overflow: scroll;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  overflow: none;
+  padding: 40px;
+}
+
+.detailPage-close-btn {
+  border: none;
+  float: right;
+}
+
+.detailPage-content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detailPage-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.detailPage-action-button {
+  margin-top: 20px;
+}
+
+.detailPage-info-container {
+  flex: 6;
+  padding-top: 10px;
+}
