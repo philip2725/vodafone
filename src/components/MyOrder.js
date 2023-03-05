@@ -52,12 +52,20 @@ function MyOrder(props) {
           </div>
         </div>
 
-        <div className="trackTrace-container">
-          <ProgressStepper deliveryStatus={data.product.deliveryStatus} />
-          <div>
-            <Map />
+        {detailPage && (
+          <div className="trackTrace-container">
+            <ProgressStepper deliveryStatus={data.product.deliveryStatus} />
+            <div className="map-container">
+              <Map />
+            </div>
           </div>
-        </div>
+        )}
+
+        {detailPage && data.product.deliveryStatus === 4 && (
+          <div className="trackTrace-actions-container">
+            <button className="manage-btn">Sie sind nicht da?</button>
+          </div>
+        )}
       </div>
     </div>
   );

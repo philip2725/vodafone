@@ -49,3 +49,14 @@
   margin-top: 20px;
   display: flex;
 }
+
+.map-container {
+  flex: 1;
+  padding: 0px 20px;
+}
+
+.trackTrace-actions-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
