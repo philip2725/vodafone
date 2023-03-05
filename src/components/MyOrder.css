@@ -52,6 +52,7 @@
 
 .map-container {
   flex: 1;
+  min-width: 400px;
   padding: 0px 20px;
 }
 
@@ -59,4 +60,41 @@
   display: flex;
   justify-content: flex-end;
   padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .order-header-container {
+    flex-wrap: wrap;
+  }
+
+  .order-header-info {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .order-product-container {
+    flex-wrap: wrap;
+  }
+
+  .trace-delivery-btn-container {
+    margin-top: 20px;
+  }
+
+  .trackTrace-container {
+    flex-wrap: wrap;
+  }
+
+  .map-container {
+    min-width: 250px;
+    height: 300px;
+    margin-top: 20px;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+  .order-header-info {
+    width: 100%;
+  }
 }

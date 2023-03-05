@@ -11,7 +11,7 @@ export default function ColorsTimeline(props) {
   const { data, handler } = props;
 
   return (
-    <Timeline position="alternate">
+    <Timeline position="left">
       {data.row.activities.map((activity) => {
         let start = `${activity.activityStart.startDate} , ${activity.activityStart.startTime}`;
         let end = `${activity.activityFinish.finishDate} , ${activity.activityFinish.finishTime}`;

@@ -5,13 +5,11 @@ import GoogleMapReact from "google-map-react";
 
 import "./Map.css";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 export default function Map() {
   const defaultProps = {
     center: {
-      lat: 51.235691,
-      lng: 6.73257,
+      lat: 51.233891,
+      lng: 6.73757,
     },
     zoom: 15,
   };
@@ -27,7 +25,6 @@ export default function Map() {
       defaultCenter={defaultProps.center}
       defaultZoom={defaultProps.zoom}
     >
-      {/* <AnyReactComponent lat={51.235691} lng={6.73257} text="My Marker" /> */}
       <SupplierMarker lat={51.235691} lng={6.73257} />
       <CustomerMarker lat={51.2328} lng={6.73957} />
     </GoogleMapReact>

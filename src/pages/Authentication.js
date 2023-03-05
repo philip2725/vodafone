@@ -1,21 +1,26 @@
 import { useState } from "react";
-
-import "./Authentication.css";
-import closeIcon from "../assets/close.png";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/userSlice";
 
 import { validateLoginInput, validateRegisterInput } from "../helpers/validate";
 import { TextInput } from "../components/Form";
 import HorizontalMenu from "../components/HorizontalMenu";
 
-import { useDispatch } from "react-redux";
-import { setUser } from "../redux/userSlice";
+import "./Authentication.css";
+import closeIcon from "../assets/close.png";
 
 function Authentication(props) {
+  //holds the state if the user wants to sign in or sign up
   const [hasAccount, setHasAccount] = useState(1);
+  //saves the input data from login form
   const [loginData, setLoginData] = useState({});
+  //saves the input data from register form
   const [registerData, setRegisterData] = useState({});
+
+  //saves error from validating the inputs e.g Email is missing
   const [inputState, setInputState] = useState({});
 
+  //allows to update redux store
   const dispatch = useDispatch();
 
   function handleInputChange(event) {
@@ -43,8 +48,9 @@ function Authentication(props) {
     event.preventDefault();
 
     let { valid, errors } = validateLoginInput(loginData);
+    //sets validate errors from input fields
     setInputState(errors);
-
+    //when input is not valid return
     if (!valid) {
       return;
     }
@@ -62,7 +68,9 @@ function Authentication(props) {
     event.preventDefault();
 
     let { valid, errors } = validateRegisterInput(registerData);
+    //sets validate errors from input fields
     setInputState(errors);
+    //when input is not valid return
     if (!valid) {
       return;
     }

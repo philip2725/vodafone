@@ -19,3 +19,13 @@
   border-radius: 5px;
   color: rgb(227, 157, 18);
 }
+
+@media (max-width: 600px) {
+  .status-inProgress,
+  .status-completed {
+    font-size: 12px;
+    padding: 10px 5px;
+    display: block;
+    text-align: center;
+  }
+}

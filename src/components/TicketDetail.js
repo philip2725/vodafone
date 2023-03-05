@@ -9,7 +9,7 @@ function TicketDetail(props) {
   const { data, handler } = props;
 
   const ref = useRef(null);
-
+  //handles clicks outside of ticket window to close it
   useEffect(() => {
     const closeTicketDetail = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -48,13 +48,24 @@ function TicketDetail(props) {
 
         <div className="detailPage-content">
           {data.row.activities && (
-            <ColorsTimeline data={data} handler={handler} />
+            <div>
+              <ColorsTimeline data={data} handler={handler} />
+            </div>
           )}
 
           <div className="detailPage-info-container">
-            <p>Start der Aktivität: {data.activity.start} </p>
-            <p>Ende der Aktivität: {data.activity.end}</p>
-            <p>Kundennachricht: {data.activity.message}</p>
+            <p>
+              <span className="detailPage-label">Start der Aktivität:</span>{" "}
+              {data.activity.start}{" "}
+            </p>
+            <p>
+              <span className="detailPage-label">Ende der Aktivität:</span>{" "}
+              {data.activity.end}
+            </p>
+            <p>
+              <span className="detailPage-label">Kundennachricht:</span>{" "}
+              {data.activity.message}
+            </p>
           </div>
         </div>
         <div className="detailPage-buttons-container">

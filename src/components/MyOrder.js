@@ -1,7 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 import "./MyOrder.css";
 import productImage from "../assets/iphone.webp";
-
-import { useNavigate } from "react-router-dom";
 
 import ProgressStepper from "./ProgressStepper";
 import Map from "./Map";

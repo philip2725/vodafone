@@ -5,6 +5,7 @@ import "./index.css";
 import Root from "./pages/Root";
 import TrackMyOrder from "./pages/TrackMyOrder";
 import MyActivities from "./pages/MyActivities";
+import Welcome from "./pages/Welcome";
 import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "react-redux";
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "aktivitäten",
+        path: "",
+        element: <Welcome />,
+      },
+      {
+        path: "myactivities",
         element: <MyActivities />,
       },
       {

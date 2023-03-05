@@ -28,6 +28,7 @@ function MyActivities(props) {
     },
   });
 
+  //sample data for orders
   const myOrders = [
     {
       orderDate: "03.03.2023",
@@ -110,6 +111,7 @@ function MyActivities(props) {
     prepareData();
   }, []);
 
+  //will be called from a "manage" button inside a row (CollapsibleTable) and receives the rows data
   function openDetailPage(row) {
     //sets the first activity in row as default selected
     let selectedActivity = row.activities[0];

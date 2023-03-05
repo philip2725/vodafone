@@ -30,6 +30,10 @@
   float: right;
 }
 
+.detailPage-label {
+  color: #7c789d;
+}
+
 .detailPage-content {
   display: flex;
   margin-top: 20px;
@@ -46,6 +50,18 @@
 }
 
 .detailPage-info-container {
-  flex: 6;
+  flex: 1;
   padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .detailPage-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .detailPage-content {
+    flex-wrap: wrap;
+  }
 }

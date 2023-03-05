@@ -15,6 +15,7 @@ function Navigation(props) {
   const currentUser = useSelector((state) => state.user.currentUser);
   const ref = useRef(null);
 
+  //used to send updates to redux store
   const dispatch = useDispatch();
 
   function handleSignout() {
@@ -27,6 +28,7 @@ function Navigation(props) {
     setDropdownVisibility((prevState) => !prevState);
   }
 
+  //handles clicks outside of dropdown menu to close it when it is open
   useEffect(() => {
     const closeDropdown = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -66,7 +68,7 @@ function Navigation(props) {
             className="dropdown-content-btn"
             onClick={() => {
               toggleDropdown();
-              navigate("/aktivitäten");
+              navigate("/myactivities");
             }}
           >
             Meine Aktivitäten
