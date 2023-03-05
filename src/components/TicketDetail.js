@@ -1,4 +1,4 @@
-import "./TicketDetail.css";
+import "./ticketDetail.css";
 
 import closeIcon from "../assets/close.png";
 import ColorsTimeline from "../components/Timeline";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./MyActivities.css";
+import "./myActivities.css";
 import { getMyRequests } from "../services/tickets";
 
 import HorizontalMenu from "../components/HorizontalMenu";

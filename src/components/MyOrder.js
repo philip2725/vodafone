@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import "./MyOrder.css";
+import "./myOrder.css";
 import productImage from "../assets/iphone.webp";
 
 import ProgressStepper from "./ProgressStepper";

@@ -6,7 +6,7 @@ import { validateLoginInput, validateRegisterInput } from "../helpers/validate";
 import { TextInput } from "../components/Form";
 import HorizontalMenu from "../components/HorizontalMenu";
 
-import "./Authentication.css";
+import "./authentication.css";
 import closeIcon from "../assets/close.png";
 
 function Authentication(props) {

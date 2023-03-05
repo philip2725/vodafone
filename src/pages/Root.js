@@ -4,7 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import Authentication from "./Authentication";
 import Navigation from "../components/Navigation";
-import "./Root.css";
+import "./root.css";
 
 function Root() {
   const [loginVisibility, setLoginVisibility] = useState(false);

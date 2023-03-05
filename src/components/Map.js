@@ -3,7 +3,7 @@ import user from "../assets/user.png";
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
-import "./Map.css";
+import "./map.css";
 
 export default function Map() {
   const defaultProps = {

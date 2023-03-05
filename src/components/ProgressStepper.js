@@ -1,4 +1,4 @@
-import "./ProgressStepper.css";
+import "./progressStepper.css";
 
 function ProgressStepper(props) {
   const { deliveryStatus } = props;

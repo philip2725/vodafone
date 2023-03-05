@@ -1,4 +1,4 @@
-import "./HorizontalMenu.css";
+import "./horizontalMenu.css";
 
 function HorizontalMenu(props) {
   return (

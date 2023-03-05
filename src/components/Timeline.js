@@ -5,7 +5,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
-import "./Timeline.css";
+import "./timeline.css";
 
 export default function ColorsTimeline(props) {
   const { data, handler } = props;
