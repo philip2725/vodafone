@@ -22,6 +22,7 @@ function Root() {
     if (location.pathname === "/myactivities" && !currentUser.email) {
       setLoginVisibility(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, loginVisibility]);
 
   return (

@@ -2,7 +2,7 @@ function isEmail(email) {
   if (!email) {
     return;
   }
-
+  // eslint-disable-next-line
   let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   if (email.match(regex)) {

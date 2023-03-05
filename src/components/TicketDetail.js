@@ -22,6 +22,7 @@ function TicketDetail(props) {
     return () => {
       document.removeEventListener("click", closeTicketDetail, true);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
