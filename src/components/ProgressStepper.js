@@ -19,8 +19,6 @@ function ProgressStepper(props) {
     }
   }
 
-  console.log(renderProgressBar(1));
-
   return (
     <div className="progressline">
       <div className="progressline-container">

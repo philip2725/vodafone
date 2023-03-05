@@ -56,7 +56,7 @@ function Authentication(props) {
     }
 
     //login user and get user data from backend
-    console.log("I am on a good way to be logged in ");
+
     //normally set user with userdata from backend
     //if login would fail we need to return and show error to user
     //so handling error is not coded here
@@ -75,7 +75,6 @@ function Authentication(props) {
       return;
     }
 
-    console.log("I am on a good way to be registered");
     //create user in backend
     //if create user would fail we need to return and show error to user
     //so handling error is not coded here

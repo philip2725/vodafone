@@ -14,7 +14,6 @@ function MyOrder(props) {
     navigate(`/lieferung/${data.orderId}`, { state: data });
   }
 
-  console.log(data);
   return (
     <div className="order-container">
       <div className="order-header-container">

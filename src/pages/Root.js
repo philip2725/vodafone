@@ -19,7 +19,6 @@ function Root() {
 
   //when is user is not logged in he/she cannot access specific pages
   useEffect(() => {
-    console.log(location);
     if (location.pathname === "/myactivities" && !currentUser.email) {
       setLoginVisibility(true);
     }

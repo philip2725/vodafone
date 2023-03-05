@@ -19,7 +19,7 @@ export default function Map() {
 
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: "AIzaSyCkIf-g5ADGEh-xWwNDZjes0hLwrhNA1C4",
+        key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         language: "de",
       }}
       defaultCenter={defaultProps.center}
