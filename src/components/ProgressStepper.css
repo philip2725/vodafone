@@ -1,0 +1,63 @@
+.progressline {
+  position: relative;
+}
+
+.progressline-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.progressline-container::after {
+  content: "";
+  width: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.progressline-status {
+  z-index: 1;
+  height: 80px;
+  position: relative;
+}
+
+.progressline-checkmark {
+  position: absolute;
+  bottom: 0;
+  left: -7px;
+  width: 25px;
+  height: 25px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.progressline-checkmark-filled {
+  background-color: #d32d1f;
+}
+
+.progressline-bar {
+  width: 10px;
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.progressline-bar-full {
+  bottom: -10px;
+  background-color: #d32d1f;
+}
+
+.progressline-bar-half {
+  bottom: 40px;
+  background-color: #d32d1f;
+}
+
+.progressline-content {
+  margin-left: 30px;
+  margin-bottom: 3px;
+}

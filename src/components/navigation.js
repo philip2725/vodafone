@@ -9,11 +9,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
 
 function Navigation(props) {
+  const navigate = useNavigate();
   const [dropdownVisibility, setDropdownVisibility] = useState(false);
 
   const currentUser = useSelector((state) => state.user.currentUser);
   const ref = useRef(null);
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -62,10 +62,18 @@ function Navigation(props) {
             dropdownVisibility && "dropdown-open"
           }`}
         >
-          <Link className="dropdown-content-link">Meine Aktivitäten</Link>
-          <Link className="dropdown-content-link" onClick={handleSignout}>
+          <button
+            className="dropdown-content-btn"
+            onClick={() => {
+              toggleDropdown();
+              navigate("/aktivitäten");
+            }}
+          >
+            Meine Aktivitäten
+          </button>
+          <button className="dropdown-content-btn" onClick={handleSignout}>
             Logout
-          </Link>
+          </button>
         </div>
       </nav>
     </header>

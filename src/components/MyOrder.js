@@ -1,9 +1,20 @@
 import "./MyOrder.css";
 import productImage from "../assets/iphone.webp";
 
-function MyOrder(props) {
-  const { data } = props;
+import { useNavigate } from "react-router-dom";
 
+import ProgressStepper from "./ProgressStepper";
+import Map from "./Map";
+
+function MyOrder(props) {
+  const { data, detailPage } = props;
+  const navigate = useNavigate();
+
+  function handleTraceDelivery() {
+    navigate(`/lieferung/${data.orderId}`, { state: data });
+  }
+
+  console.log(data);
   return (
     <div className="order-container">
       <div className="order-header-container">
@@ -33,11 +44,20 @@ function MyOrder(props) {
           <img src={productImage} height={50} alt="Iphone 14 Pro 128GB" />
           <span>{data.product.name}</span>
           <div className="trace-delivery-btn-container">
-            <button className="manage-btn">Lieferung verfolgen</button>
+            {!detailPage && (
+              <button className="manage-btn" onClick={handleTraceDelivery}>
+                Lieferung verfolgen
+              </button>
+            )}
           </div>
         </div>
 
-        <div></div>
+        <div className="trackTrace-container">
+          <ProgressStepper deliveryStatus={data.product.deliveryStatus} />
+          <div>
+            <Map />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -43,6 +43,7 @@ function MyActivities(props) {
         name: "Apple iPhone 14 Pro 128GB Space Schwarz Dual Sim",
         price: "300,95",
         deliveryDate: "04.03.2023",
+        deliveryStatus: 0,
       },
     },
     {
@@ -59,6 +60,41 @@ function MyActivities(props) {
         name: "Apple iPhone 14 Pro Protection Case Blau",
         price: "45,00",
         deliveryDate: "10.03.2023",
+        deliveryStatus: 2,
+      },
+    },
+    {
+      orderDate: "05.03.2023",
+      total: "50,95",
+      adress: {
+        name: "Mareike",
+        street: "Rudolfstraße 1",
+        zip: "50665",
+        city: "Köln",
+      },
+      orderId: "307-45663455",
+      product: {
+        name: "Apple iPhone 14 Pro Protection Case Blau",
+        price: "45,00",
+        deliveryDate: "10.03.2023",
+        deliveryStatus: 4,
+      },
+    },
+    {
+      orderDate: "05.03.2023",
+      total: "50,95",
+      adress: {
+        name: "Mareike",
+        street: "Rudolfstraße 1",
+        zip: "50665",
+        city: "Köln",
+      },
+      orderId: "307-45663455",
+      product: {
+        name: "Apple iPhone 14 Pro Protection Case Blau",
+        price: "45,00",
+        deliveryDate: "10.03.2023",
+        deliveryStatus: 5,
       },
     },
   ];
@@ -115,7 +151,9 @@ function MyActivities(props) {
       {menuIndex === 1 && (
         <>
           {myOrders.map((order) => {
-            return <MyOrder data={order} />;
+            return (
+              <MyOrder data={order} key={order.orderId} detailPage={false} />
+            );
           })}
         </>
       )}
